@@ -1,101 +1,328 @@
 import Image from "next/image";
+import HomeHeroSection from "@/components/HomeHeroSection";
+import Button from "@/components/Button";
+import CollectionItem from "@/components/CollectionItem";
+import feedbackImage from "./images/feedback-image.webp";
+import feedbackLeaf from "./images/feedback-mask.svg";
+import quotationMarkStart from "./images/quotation-mark-start.svg";
+import quotationMarkEnd from "./images/quotation-mark-end.svg";
+import socialLeaf from "./images/social-leaf.svg";
+import InstagramIcon from "./images/socials-instagram.svg";
+import FacebookIcon from "./images/socials-facebook.svg";
+import TwitterIcon from "./images/socials-twitter.svg";
+import Copyright from "./images/copyright.svg";
+import Link from "next/link";
+
+const dItems = [
+  {
+    id: 1,
+    name: "Flower Vase",
+    price: 29.99,
+    img: "https://firebasestorage.googleapis.com/v0/b/furniture-shop-web-app.appspot.com/o/fv1.png?alt=media&token=b5e6e293-15c5-4179-8af2-3378fb043813",
+  },
+  {
+    id: 2,
+    name: "Bookshelf",
+    price: 119.99,
+    img: "https://firebasestorage.googleapis.com/v0/b/furniture-shop-web-app.appspot.com/o/bs1.png?alt=media&token=040fa92c-93dd-48d3-971e-b77a099cb4dc",
+  },
+  {
+    id: 3,
+    name: "Table Chair",
+    price: 180.34,
+    img: "https://firebasestorage.googleapis.com/v0/b/furniture-shop-web-app.appspot.com/o/tc1.png?alt=media&token=3b13731c-f0ba-47f7-88c6-60754610a8e9",
+  },
+  {
+    id: 4,
+    name: "Wall Clock",
+    price: 20.14,
+    img: "https://firebasestorage.googleapis.com/v0/b/furniture-shop-web-app.appspot.com/o/wc1.png?alt=media&token=94f53948-9604-4b6d-b1d4-aba316a97f02",
+  },
+  {
+    id: 5,
+    name: "Round Table",
+    price: 24.99,
+    img: "https://firebasestorage.googleapis.com/v0/b/furniture-shop-web-app.appspot.com/o/rt1.png?alt=media&token=52e7aa36-93ec-4351-b2f1-3ad385b94d14",
+  },
+  {
+    id: 6,
+    name: "Pottery Vase",
+    price: 24.99,
+    img: "https://firebasestorage.googleapis.com/v0/b/furniture-shop-web-app.appspot.com/o/pv1.png?alt=media&token=13099e08-29f3-4cc7-809e-2e792c94390a",
+  },
+  {
+    id: 7,
+    name: "Wooden Sofa",
+    price: 140.22,
+    img: "https://firebasestorage.googleapis.com/v0/b/furniture-shop-web-app.appspot.com/o/ws1.png?alt=media&token=7ca9f169-fae6-4a0b-a1b1-8ad33741132d",
+  },
+  {
+    id: 8,
+    name: "Black chair",
+    price: 160.34,
+    img: "https://firebasestorage.googleapis.com/v0/b/furniture-shop-web-app.appspot.com/o/bc1.png?alt=media&token=8dff8169-37ce-454b-9788-c619d7c1c99a",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="bg-white h-screen w-full">
+      {/* HERO SECTION */}
+      <HomeHeroSection />
+      <div id="square-boxes-hero" className="mt-[-30px] ml-[108px] z-60">
+        <div className="h-[60px] w-[60px] bg-[#ddf3f4] mix-blend-multiply"></div>
+        <div className="h-[40px] w-[40px] bg-[#ddf3f4] mix-blend-multiply absolute mt-[-15px] ml-[45px]"></div>
+      </div>
+      {/* HERO SECTION END */}
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+      {/* WHAT WE DO SECTION  */}
+      <section
+        id="what-we-do-section"
+        className="mt-[80px] text-center w-full flex flex-col items-center"
+      >
+        <h2 className="font-[family-name:var(--font-butler)] text-[70px] text-center">
+          What We Do
+        </h2>
+        <p className="text-center leading-[25px] font-[300] text-[14px] mt-[16px] max-w-[800px]">
+          Our Focus: Crafting Inspiring Living Spaces. At{" "}
+          <b className="font-[600]">Furniture home</b>, we're dedicated to
+          turning ordinary spaces into visual masterpieces. With a passion for
+          design, we collaborate closely with you to bring your unique vision to
+          life. From color palettes to furniture arrangement, our decor experts
+          ensure each corner tells a captivating story.
+        </p>
+        <p className="text-center leading-[25px] mt-[9px] font-[300] text-[14px] max-w-[800px]">
+          Whether your style is contemporary, classic, or eclectic, let us
+          expertly transform your dreams into stunning reality. Discover the art
+          of creating lovely environments that truly resonate and inspire, as we
+          skillfully turn houses into homes and rooms into reflections of you.
+        </p>
+        <Button customStyle={{ marginTop: "36px" }}>Learn More</Button>
+      </section>
+      {/* WHAT WE DO SECTION END */}
+
+      {/* POPULAR COLLECTION SECTION */}
+      <section
+        id="popular-collection-section"
+        className="mt-[146px] text-center w-full flex flex-col items-center pb-[40px] px-[45px]"
+      >
+        <h2 className="font-[family-name:var(--font-butler)] text-[70px] text-center">
+          Popular Collection
+        </h2>
+        <div className="flex flex-wrap w-[80%] gap-x-[20px] gap-y-[85px] justify-center">
+          {dItems.map((item) => (
+            <CollectionItem
+              id={item?.id}
+              name={item?.name}
+              price={item?.price}
+              img={item?.img}
+              key={item.id}
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          ))}
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+      </section>
+      {/* POPULAR COLLECTION SECTION END */}
+
+      {/* FEEDBACK SECTION */}
+      <section
+        id="user-feedback-section"
+        className="mt-[68px] w-full pr-11 flex flex-col items-center"
+      >
+        <div className="h-[595px] w-[80%] bg-[#faefee] relative mix-blend-multiply">
+          <div
+            id="square-boxes-hero"
+            className="z-30 absolute right-5 bottom-[97.5%]"
+          >
+            <div className="h-[60px] w-[60px] bg-[#f5dfde] mix-blend-multiply"></div>
+            <div className="h-[40px] w-[40px] bg-[#f0d1d0] mix-blend-multiply absolute mt-[-15px] ml-[-25px]"></div>
+          </div>
+          <div className="flex">
+            <Image
+              className="absolute right-0 bottom-0"
+              src={feedbackLeaf}
+              alt="feedback-leaf"
+            />
+            <Image
+              src={feedbackImage}
+              height={461}
+              width={492}
+              alt="feedback"
+              className="mt-[5%] ml-[-45px]"
+            />
+            <div className="w-[580px] ml-[136px] self-center z-40 mr-[85px] top-[50%] translate-y-[20%]">
+              <h2 className="text-[50px] font-[family-name:var(--font-cormorant)] leading-[48px]">
+                Redefining Living Spaces with Furniture home
+              </h2>
+              <p className="mt-[26px] font-[family-name:var(--font-poppins)] text-[14px]">
+                <Image
+                  src={quotationMarkStart}
+                  alt="quotation-mark"
+                  className="inline"
+                />{" "}
+                They expertly turned my space into a haven of style and comfort.
+                Every design element seemed to reflect my vision, creating an
+                atmosphere that resonated with my dreams. The seamless blend of
+                creativity and elegance has truly made my home an inspiring
+                sanctuary.{" "}
+                <Image
+                  src={quotationMarkEnd}
+                  alt="quotation-mark"
+                  className="inline"
+                />
+              </p>
+              <Button customStyle={{ marginTop: "35px" }}>Learn More</Button>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* FEEDBACK SECTION END */}
+
+      {/* INSTAGRAM SECTION */}
+      <section
+        id="instagram-section"
+        className="mt-[91px] h-[599px] w-full flex flex-col items-center"
+      >
+        <div className="w-[80%] h-full flex justify-center relative">
           <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+            src={socialLeaf}
+            alt="social-leaf"
+            className="absolute self-center z-10"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          <div className="translate-y-[20%]">
+            <p className="text-[74px] font-[family-name:var(--font-cormorant)] text-center">
+              INSTAGRAM
+            </p>
+            <p className="text-center text-[22px] font[family-name:var(--font-poppins)]">
+              #furniturehome
+            </p>
+          </div>
+          <div id="left-side" className="z-50 absolute left-0 top-[70px]">
+            <Image
+              src="https://firebasestorage.googleapis.com/v0/b/furniture-shop-web-app.appspot.com/o/fv1.png?alt=media&token=b5e6e293-15c5-4179-8af2-3378fb043813"
+              alt="flower-vase"
+              width={206}
+              height={218}
+              className="h-[218px] w-[206px]"
+            />
+            <Image
+              src="https://firebasestorage.googleapis.com/v0/b/furniture-shop-web-app.appspot.com/o/ws1.png?alt=media&token=7ca9f169-fae6-4a0b-a1b1-8ad33741132d"
+              alt="wooden-sofa"
+              width={149}
+              height={157}
+              className="h-[157px] w-[149px] absolute left-[153px] top-[155px] shadow-md"
+            />
+          </div>
+          <div className="absolute left-[50%] translate-x-[-50%] top-[50%]">
+            <Image
+              src="https://firebasestorage.googleapis.com/v0/b/furniture-shop-web-app.appspot.com/o/tc1.png?alt=media&token=3b13731c-f0ba-47f7-88c6-60754610a8e9"
+              alt="chair"
+              width={175}
+              height={185}
+              className="h-[185px] w-[175px]"
+            />
+          </div>
+
+          <div id="right-side" className="z-50 absolute right-0 top-[70px]">
+            <Image
+              src="https://firebasestorage.googleapis.com/v0/b/furniture-shop-web-app.appspot.com/o/wc1.png?alt=media&token=94f53948-9604-4b6d-b1d4-aba316a97f02"
+              alt="wall-clock"
+              width={206}
+              height={218}
+              className="h-[218px] w-[206px]"
+            />
+            <Image
+              src="https://firebasestorage.googleapis.com/v0/b/furniture-shop-web-app.appspot.com/o/rt1.png?alt=media&token=52e7aa36-93ec-4351-b2f1-3ad385b94d14"
+              alt="round-table"
+              width={149}
+              height={157}
+              className="h-[157px] w-[149px] z-20 absolute right-[153px] top-[175px] shadow-md"
+            />
+          </div>
+        </div>
+      </section>
+      {/* INSTAGRAM SECTION END */}
+
+      {/* FOOTER SECTION */}
+      <footer className="border-t-[1px] border-t-[#dddddd] w-full mt-[100px] flex flex-col items-center">
+        <div
+          id="wrapper"
+          className="w-[80%] flex flex-wrap justify-between mt-[55px]"
         >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          <div id="links-section" className="flex flex-wrap gap-[100px]">
+            <div className="flex flex-col gap-4">
+              <h2 className="font-semibold">Company</h2>
+              <Link href="/" className="text-[#6c757d]">
+                Home
+              </Link>
+              <Link href="/" className="text-[#6c757d]">
+                Features
+              </Link>
+              <Link href="/" className="text-[#6c757d]">
+                Pricing
+              </Link>
+              <Link href="/" className="text-[#6c757d]">
+                FAQ's
+              </Link>
+              <Link href="/" className="text-[#6c757d]">
+                About
+              </Link>
+            </div>
+            <div className="flex flex-col gap-4">
+              <h2 className="font-semibold">Resources</h2>
+              <Link href="/" className="text-[#6c757d]">
+                Get started
+              </Link>
+              <Link href="/" className="text-[#6c757d]">
+                Learn
+              </Link>
+              <Link href="/" className="text-[#6c757d]">
+                Case Studies
+              </Link>
+              <Link href="/" className="text-[#6c757d]">
+                FAQ's
+              </Link>
+            </div>
+            <div className="flex flex-col gap-4">
+              <h2 className="font-semibold">Community</h2>
+              <Link href="/" className="text-[#6c757d]">
+                Discord
+              </Link>
+              <Link href="/" className="text-[#6c757d]">
+                Events
+              </Link>
+              <Link href="/" className="text-[#6c757d]">
+                FAQ's
+              </Link>
+              <Link href="/" className="text-[#6c757d]">
+                Blog
+              </Link>
+            </div>
+          </div>
+          <div id="subscribe-to-newsletter-section">Hi</div>
+        </div>
+
+        <div
+          id="socials-section"
+          className="w-full flex flex-wrap justify-between border-t-[1px] border-t-[#dddddd] px-[10%] py-[32px] mt-[76px]"
         >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+          <p className="text-[#6c757d] text-[12px] font-[family-name:var(--font-poppins)]">
+            <Image src={Copyright} alt="copyright" className="inline mr-5" />
+            2022 Company, Inc. All rights reserved.
+          </p>
+          <div className="flex gap-5">
+            <Link href="/">
+              <Image src={TwitterIcon} alt="socials-twitter" />
+            </Link>
+            <Link href="/">
+              <Image src={InstagramIcon} alt="socials-instagram" />
+            </Link>
+            <Link href="/">
+              <Image src={FacebookIcon} alt="socials-facebook" />
+            </Link>
+          </div>
+        </div>
       </footer>
+      {/* FOOTER SECTION END */}
     </div>
   );
 }
