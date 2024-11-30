@@ -85,7 +85,7 @@ export default function Home() {
         </h2>
         <p className="text-center leading-[25px] font-[300] text-[14px] mt-[16px] max-w-[800px]">
           Our Focus: Crafting Inspiring Living Spaces. At{" "}
-          <b className="font-[600]">Furniture home</b>, we're dedicated to
+          <b className="font-[600]">Furniture home</b>, we are dedicated to
           turning ordinary spaces into visual masterpieces. With a passion for
           design, we collaborate closely with you to bring your unique vision to
           life. From color palettes to furniture arrangement, our decor experts
@@ -261,7 +261,7 @@ export default function Home() {
                 Pricing
               </Link>
               <Link href="/" className="text-[#6c757d]">
-                FAQ's
+                {`FAQ's`}
               </Link>
               <Link href="/" className="text-[#6c757d]">
                 About
@@ -279,7 +279,7 @@ export default function Home() {
                 Case Studies
               </Link>
               <Link href="/" className="text-[#6c757d]">
-                FAQ's
+                {`FAQ's`}
               </Link>
             </div>
             <div className="flex flex-col gap-4">
@@ -291,7 +291,7 @@ export default function Home() {
                 Events
               </Link>
               <Link href="/" className="text-[#6c757d]">
-                FAQ's
+                {`FAQ's`}
               </Link>
               <Link href="/" className="text-[#6c757d]">
                 Blog
