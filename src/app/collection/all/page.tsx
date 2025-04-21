@@ -8,11 +8,6 @@ import InfiniteScrollView from "@/components/InfiniteScrollView";
 import { INFINITE_SCROLL_VIEW_CHILD_VIEWS } from "@/helpers/constants";
 import Select from "react-select";
 
-export const options = [
-  { value: "chocolate", label: "Chocolate" },
-  { value: "strawberry", label: "Strawberry" },
-  { value: "vanilla", label: "Vanilla" },
-];
 export default function Collection() {
   const [selectedOption, setSelectedOption] = useState(null);
 
@@ -25,7 +20,11 @@ export default function Collection() {
       {/* FILTERS SECTION */}
       <div className="flex w-[100%] items-center justify-center mt-10 mb-10 gap-6">
         <Select
-          options={options}
+          options={[
+            { value: "chocolate", label: "Chocolate" },
+            { value: "strawberry", label: "Strawberry" },
+            { value: "vanilla", label: "Vanilla" },
+          ]}
           placeholder="Type"
           styles={{
             control: (base, state) => ({
@@ -35,7 +34,11 @@ export default function Collection() {
           }}
         />
         <Select
-          options={options}
+          options={[
+            { value: "chocolate", label: "Chocolate" },
+            { value: "strawberry", label: "Strawberry" },
+            { value: "vanilla", label: "Vanilla" },
+          ]}
           placeholder="Price"
           styles={{
             control: (base, state) => ({

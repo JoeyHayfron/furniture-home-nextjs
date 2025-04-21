@@ -5,7 +5,6 @@ import Image from "next/image";
 import { Rating, ThinRoundedStar } from "@smastrom/react-rating";
 import { useState } from "react";
 import Select from "react-select";
-import { options } from "../../all/page";
 import Button from "@/components/Button";
 
 export default function CollectionDetailPage() {
@@ -103,7 +102,11 @@ export default function CollectionDetailPage() {
             <>
               <h3 className="mt-10 ">Color</h3>
               <Select
-                options={options}
+                options={[
+                  { value: "chocolate", label: "Chocolate" },
+                  { value: "strawberry", label: "Strawberry" },
+                  { value: "vanilla", label: "Vanilla" },
+                ]}
                 placeholder="Price"
                 styles={{
                   control: (base, state) => ({
@@ -116,7 +119,11 @@ export default function CollectionDetailPage() {
             <>
               <h3 className="mt-5">Quantity</h3>
               <Select
-                options={options}
+                options={[
+                  { value: "chocolate", label: "Chocolate" },
+                  { value: "strawberry", label: "Strawberry" },
+                  { value: "vanilla", label: "Vanilla" },
+                ]}
                 placeholder="Price"
                 styles={{
                   control: (base, state) => ({
