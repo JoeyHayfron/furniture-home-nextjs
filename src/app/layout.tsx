@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Poppins, Cormorant_Garamond } from "next/font/google";
 import Navbar from "@/components/Navbar";
+import "@smastrom/react-rating/style.css";
 
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -52,6 +53,10 @@ export default function RootLayout({
           type="image/png"
           sizes="16x16"
           href="/favicon-16x16.png"
+        />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0&icon_names=chevron_right"
         />
         <link rel="manifest" href="/site.webmanifest" />
       </head>

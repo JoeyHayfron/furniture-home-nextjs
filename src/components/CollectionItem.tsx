@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import PlaceholderImage from "@/app/images/placeholder-image.jpg";
 
 export interface CollectionItemProps {
   id: string | number;
@@ -24,6 +25,10 @@ export default function CollectionItem({
         width={320}
         height={336}
         alt={name}
+        placeholder="blur"
+        // loader={({ src: PlaceholderImage }) => ""}
+        style={{ background: "#000" }}
+        blurDataURL="../app/images/placeholder-image.jpg"
         className="hover:shadow-md hover:scale-105"
       />
       <p className="mt-[26px] text-[18px] font-[600]">{name}</p>

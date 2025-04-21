@@ -7,13 +7,9 @@ import feedbackLeaf from "./images/feedback-mask.svg";
 import quotationMarkStart from "./images/quotation-mark-start.svg";
 import quotationMarkEnd from "./images/quotation-mark-end.svg";
 import socialLeaf from "./images/social-leaf.svg";
-import InstagramIcon from "./images/socials-instagram.svg";
-import FacebookIcon from "./images/socials-facebook.svg";
-import TwitterIcon from "./images/socials-twitter.svg";
-import Copyright from "./images/copyright.svg";
-import Link from "next/link";
+import Footer from "@/components/Footer";
 
-const dItems = [
+export const dItems = [
   {
     id: 1,
     name: "Flower Vase",
@@ -80,7 +76,7 @@ export default function Home() {
         id="what-we-do-section"
         className="mt-[80px] text-center w-full flex flex-col items-center"
       >
-        <h2 className="font-[family-name:var(--font-butler)] text-[70px] text-center">
+        <h2 className="font-[family-name:var(--font-cormorant)] text-[70px] text-center">
           What We Do
         </h2>
         <p className="text-center leading-[25px] font-[300] text-[14px] mt-[16px] max-w-[800px]">
@@ -106,7 +102,7 @@ export default function Home() {
         id="popular-collection-section"
         className="mt-[146px] text-center w-full flex flex-col items-center pb-[40px] px-[45px]"
       >
-        <h2 className="font-[family-name:var(--font-butler)] text-[70px] text-center">
+        <h2 className="font-[family-name:var(--font-cormorant)] text-[70px] text-center">
           Popular Collection
         </h2>
         <div className="flex flex-wrap w-[80%] gap-x-[20px] gap-y-[85px] justify-center">
@@ -243,85 +239,7 @@ export default function Home() {
       {/* INSTAGRAM SECTION END */}
 
       {/* FOOTER SECTION */}
-      <footer className="border-t-[1px] border-t-[#dddddd] w-full mt-[100px] flex flex-col items-center">
-        <div
-          id="wrapper"
-          className="w-[80%] flex flex-wrap justify-between mt-[55px]"
-        >
-          <div id="links-section" className="flex flex-wrap gap-[100px]">
-            <div className="flex flex-col gap-4">
-              <h2 className="font-semibold">Company</h2>
-              <Link href="/" className="text-[#6c757d]">
-                Home
-              </Link>
-              <Link href="/" className="text-[#6c757d]">
-                Features
-              </Link>
-              <Link href="/" className="text-[#6c757d]">
-                Pricing
-              </Link>
-              <Link href="/" className="text-[#6c757d]">
-                {`FAQ's`}
-              </Link>
-              <Link href="/" className="text-[#6c757d]">
-                About
-              </Link>
-            </div>
-            <div className="flex flex-col gap-4">
-              <h2 className="font-semibold">Resources</h2>
-              <Link href="/" className="text-[#6c757d]">
-                Get started
-              </Link>
-              <Link href="/" className="text-[#6c757d]">
-                Learn
-              </Link>
-              <Link href="/" className="text-[#6c757d]">
-                Case Studies
-              </Link>
-              <Link href="/" className="text-[#6c757d]">
-                {`FAQ's`}
-              </Link>
-            </div>
-            <div className="flex flex-col gap-4">
-              <h2 className="font-semibold">Community</h2>
-              <Link href="/" className="text-[#6c757d]">
-                Discord
-              </Link>
-              <Link href="/" className="text-[#6c757d]">
-                Events
-              </Link>
-              <Link href="/" className="text-[#6c757d]">
-                {`FAQ's`}
-              </Link>
-              <Link href="/" className="text-[#6c757d]">
-                Blog
-              </Link>
-            </div>
-          </div>
-          <div id="subscribe-to-newsletter-section">Hi</div>
-        </div>
-
-        <div
-          id="socials-section"
-          className="w-full flex flex-wrap justify-between border-t-[1px] border-t-[#dddddd] px-[10%] py-[32px] mt-[76px]"
-        >
-          <p className="text-[#6c757d] text-[12px] font-[family-name:var(--font-poppins)]">
-            <Image src={Copyright} alt="copyright" className="inline mr-5" />
-            2022 Company, Inc. All rights reserved.
-          </p>
-          <div className="flex gap-5">
-            <Link href="/">
-              <Image src={TwitterIcon} alt="socials-twitter" />
-            </Link>
-            <Link href="/">
-              <Image src={InstagramIcon} alt="socials-instagram" />
-            </Link>
-            <Link href="/">
-              <Image src={FacebookIcon} alt="socials-facebook" />
-            </Link>
-          </div>
-        </div>
-      </footer>
+      <Footer />
       {/* FOOTER SECTION END */}
     </div>
   );
